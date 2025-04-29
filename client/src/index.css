@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom WhatsApp styles */
+@layer base {
+  :root {
+    --whatsapp-light: #25D366;
+    --whatsapp-dark: #128C7E;
+    --whatsapp-teal: #075E54;
+    --whatsapp-blue: #34B7F1;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply min-h-screen bg-gray-100;
+  }
+}
+
+@layer components {
+  .chat-bubble {
+    @apply rounded-lg p-3 max-w-[70%] break-words;
+  }
+  
+  .chat-bubble-sent {
+    @apply bg-whatsapp-light text-white ml-auto;
+  }
+  
+  .chat-bubble-received {
+    @apply bg-white text-gray-800;
+  }
+
+  .btn-primary {
+    @apply bg-whatsapp-light hover:bg-whatsapp-dark text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .input-primary {
+    @apply w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-whatsapp-light;
+  }
+}
